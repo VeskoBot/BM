@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+*{
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+body{
+  width: 100%;
+  /* background-image: url(../image/1.jpg); */
+  background-color: #333;
+}
+header{
+  display: flex;
+  width: inherit;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #222;
+  padding-bottom: 10px;
+}
+.menu-btn{
+  width: 60px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.menu{
+  margin: 0;
+  width: 50%;
+  height: 60px;
+  position: absolute;
+  left: -45%;
+  opacity:0;
+  z-index: -2;
+  transition: all 0.5s ease;
+}
+.headMenu{
+  height: inherit;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.headMenu a{
+  list-style:none;
+  text-decoration: none;
+  color:#aad400;
+  border-left: 2px solid;
+  padding: 7px;
+}
+.headMenu li{
+  text-align: center;
+  font-family: 'Lobster', cursive;
+  font-size: 20px;
+  display: inline-block;
+}
+.open .menu{
+  left:25%;
+  opacity:1;
+  transition: all 0.5s ease;
+  z-index: 1;
+}
+.logo{
+  height: 60px;
+  width: 53px;
+  background-image: url(../image/BM.png);
+  background-size: cover;
+  margin:0 auto;
+  transition: all 2s ease;
+}
+.secondLogo{
+  position: absolute;
+  right: 2%;
+  opacity: 0;
+  height: 60px;
+  width: 53px;
+  background-image: url(../image/BM.png);
+  background-size: cover;
+  transition: all 0.3s ease;
+}
+.open .secondLogo{
+  opacity: 1;
+  transition: all 2s ease;
+}
+.open .logo{
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+.list{
+  content: '';
+  width: 45px;
+  height: 6px;
+  background: #aad400;
+  border-radius: 3px;
+  transition: all 0.5s ease;
+}
+.list::before,
+.list::after{
+  content: '';
+  position: absolute;
+  width: 45px;
+  height: 6px;
+  background: #aad400;
+  border-radius: 3px;
+  transition: all 0.5s ease;
+}
+.list::before{
+  transform: translateY(-12px);
+}
+.list::after{
+  transform: translateY(12px);
+}
+.menu-btn.open .list{
+  transform: translateX(-50px);
+  background:transparent;
+}
+.menu-btn.open .list::before{
+  transform: translate(50px,-10px) rotate(27deg);
+}
+.menu-btn.open .list::after{
+  transform: translate(50px,10px) rotate(-27deg);
+}
+main{
+  width: 80%;
+  height: 850px;
+  margin: 0 auto;
+  padding-bottom: 10px;
+}
+footer{
+  background-color: #222;
+  padding-top: 10px;
+  width: inherit;
+  height: 60px;
+}
